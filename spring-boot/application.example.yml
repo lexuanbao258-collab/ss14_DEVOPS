@@ -1,0 +1,13 @@
+# Ví dụ để ghép vào application.yml của Spring Boot, không thay toàn bộ file hiện có.
+spring:
+  application:
+    name: spring-demo
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  metrics:
+    tags:
+      application: ${spring.application.name}

@@ -1,0 +1,13 @@
+# VÍ DỤ: áp dụng khi thực tế có 3 Node Exporter riêng đang chạy.
+# Các tên bên dưới phải được DNS/network của Prometheus phân giải được.
+# Không thay prometheus.yml hiện tại nếu 3 server chưa tồn tại.
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: node-exporter
+    static_configs:
+      - targets:
+          - app-server-1:9100
+          - db-server-1:9100
+          - cache-server-1:9100
